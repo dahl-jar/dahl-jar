@@ -18,20 +18,17 @@ A book tracking app I rebuilt on my own from an earlier group project.
 
 ### [betterreads](https://github.com/dahl-jar/betterreads)
 
-A headless JSON API. The catalog pulls book data from six sources and merges it
-field by field by trust ranking; a book stays in a staging table until it has
-every field a detail page needs, then gets promoted. Descriptions are scored so
-the best one wins.
+A headless JSON API that combines book data from six sources using field-level
+trust rankings. Books stay in staging until they have every field needed for a
+detail page, and the best description is selected by score before promotion.
 
-Auth is short-lived access JWTs with refresh tokens that rotate on every use,
-and reuse of an old token revokes the whole family. Email goes through a
-transactional outbox so a crash mid-send never drops or doubles a message. Rate
-limiting runs in Redis, search on Meilisearch.
+Authentication uses short-lived access JWTs and rotating refresh tokens. Reusing
+an old refresh token revokes the whole family. Email uses a transactional outbox,
+Redis handles rate limiting, and Meilisearch handles search.
 
 ### [betterreads-gitops-template](https://github.com/dahl-jar/betterreads-gitops-template)
 
-The Kubernetes setup behind it, pulled out into a template. Argo CD reconciles
-the cluster from Git, so a deploy is a commit. Nothing listens on an inbound
-port; a Cloudflare Tunnel dials out. A default-deny network policy opens each
-flow by name. Secrets are sealed against the cluster key, so the encrypted form
-sits in the repo and only the cluster can read it.
+A k3s GitOps template extracted from BetterReads. Argo CD deploys from Git, and
+Cloudflare Tunnel provides ingress without exposed ports. Default-deny network
+policies restrict service traffic, and sealed secrets keep encrypted values in
+the repository. Grafana Alloy sends pod logs and metrics to Grafana Cloud.
