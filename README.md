@@ -1,42 +1,25 @@
-<div align="center">
+# Introduction
 
-# BetterReads
+I'm a software developer, and I spend much of my free time building software for my own use. I usually work across the whole project, from the API and interface to deployment and monitoring. My projects include Java and Spring Boot services, React web apps, React Native clients, and self-hosted Kubernetes.
 
-A book tracking app I rebuilt on my own from an earlier group project.
+## Projects
 
-[![App](https://img.shields.io/badge/betterreads-app-1F4D7A?style=flat-square&logo=github)](https://github.com/dahl-jar/betterreads)
-[![Frontend](https://img.shields.io/badge/betterreads--frontend-1F4D7A?style=flat-square&logo=github)](https://github.com/dahl-jar/betterreads-frontend)
-[![Infra](https://img.shields.io/badge/betterreads-gitops--template-1F4D7A?style=flat-square&logo=github)](https://github.com/dahl-jar/betterreads-gitops-template)
+### [Homeflix](https://github.com/dahl-jar/homeflix-native)
 
-[![Java](https://img.shields.io/badge/Java-555?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-555?style=flat-square&logo=springboot&logoColor=white)](https://docs.spring.io/spring-boot/index.html)
-[![React](https://img.shields.io/badge/React-555?style=flat-square&logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-555?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-555?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/docs/)
-[![Redis](https://img.shields.io/badge/Redis-555?style=flat-square&logo=redis&logoColor=white)](https://redis.io/docs/latest/)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-555?style=flat-square&logo=kubernetes&logoColor=white)](https://kubernetes.io/docs/home/)
-[![Argo CD](https://img.shields.io/badge/Argo%20CD-555?style=flat-square&logo=argo&logoColor=white)](https://argo-cd.readthedocs.io/en/stable/)
+A sideloaded iPhone client for a self-hosted, Jellyfin-compatible media library. It covers library browsing, search, playback preparation, skip segments, native controls, and episode playback.
 
-</div>
+`React Native` · `Expo` · `Jellyfin API`
 
-### [betterreads](https://github.com/dahl-jar/betterreads)
+### BetterReads
 
-A headless JSON API that combines book data from six sources using field-level
-trust rankings. Books stay in staging until they have every field needed for a
-detail page, and the best description is selected by score before promotion.
+A book tracking platform I rebuilt from an earlier group project. The Spring Boot API combines catalog records from several sources, while the React client handles search, shelves, reviews, and discussions. It runs on k3s through Argo CD.
 
-Authentication uses short-lived access JWTs and rotating refresh tokens. Reusing
-an old refresh token revokes the whole family. Email uses a transactional outbox,
-Redis handles rate limiting, and Meilisearch handles search.
+[Backend](https://github.com/dahl-jar/betterreads) · [Frontend](https://github.com/dahl-jar/betterreads-frontend) · [GitOps template](https://github.com/dahl-jar/betterreads-gitops-template)
 
-### [betterreads-frontend](https://github.com/dahl-jar/betterreads-frontend)
+`Java` · `Spring Boot` · `React` · `TypeScript` · `Postgres` · `Kubernetes`
 
-The React and TypeScript client for BetterReads. It covers catalog search,
-reading shelves, reviews and book discussions.
+### [Voice Control](https://github.com/dahl-jar/voice-control)
 
-### [betterreads-gitops-template](https://github.com/dahl-jar/betterreads-gitops-template)
+A hands-free keyboard that maps spoken commands to arrow keys. A small PyTorch model trained on Google Speech Commands v2 handles microphone input locally.
 
-A k3s GitOps template extracted from BetterReads. Argo CD deploys from Git, and
-Cloudflare Tunnel provides ingress without exposed ports. Default-deny network
-policies restrict service traffic, and sealed secrets keep encrypted values in
-the repository. Grafana Alloy sends pod logs and metrics to Grafana Cloud.
+`Python` · `PyTorch` · `TorchAudio`
