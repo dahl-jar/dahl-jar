@@ -1,9 +1,8 @@
 <h1 align="center">Introduction</h1>
 
 <p align="center">
-  I'm a software developer, and I spend much of my free time building software for my own use.<br>
-  I usually work across the whole project, from the API and interface to deployment and monitoring.<br>
-  My projects include Java and Spring Boot services, React web apps, React Native clients, and self-hosted Kubernetes.
+  Most of my projects start with something I want to use myself.<br>
+  So far, that has led to a Jellyfin client I sideload onto my iPhone, a C++ app for controlling my PC's RGB hardware, and a k3s cluster running on my own server.
 </p>
 
 <h2 align="center">Projects</h2>
