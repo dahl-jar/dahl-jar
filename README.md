@@ -18,6 +18,12 @@ A book tracking platform I rebuilt from an earlier group project. The Spring Boo
 
 `Java` · `Spring Boot` · `React` · `TypeScript` · `Postgres` · `Kubernetes`
 
+### [RGB Picker](https://github.com/dahl-jar/rgb-picker)
+
+A Windows app for controlling supported RGB hardware through OpenRGB drivers linked directly into the application. It saves lighting profiles, manages device and zone colors, restores lighting when hardware appears, and includes a command-line client.
+
+`C++23` · `Dear ImGui` · `OpenRGB` · `Win32` · `DirectX 11` · `CMake`
+
 ### [Voice Control](https://github.com/dahl-jar/voice-control)
 
 A hands-free keyboard that maps spoken commands to arrow keys. A small PyTorch model trained on Google Speech Commands v2 handles microphone input locally.
